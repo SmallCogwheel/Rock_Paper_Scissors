@@ -190,7 +190,7 @@
       let resultText1 = `ai의  ${choices[ai]}! / 당신의 ${choices[user]}! <br>`;
       if (ai === user) {
         draw++;
-        resultText += "비겼다. 왜지";
+        resultText += "비겼다.";
         resultText1 += "비겼다.";
       } else if (
         (user === 1 && ai === 2) ||
@@ -198,11 +198,11 @@
         (user === 3 && ai === 1)
       ) {
         win++;
-        resultText += "이겼다. 왜지";
+        resultText += "이겼다.";
         resultText1 += "이겼다.";
       } else {
         lose++;
-        resultText += "졌다. 왜지";
+        resultText += "졌다.";
         resultText1 += "졌다.";
       }
 
