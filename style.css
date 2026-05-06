@@ -9,7 +9,7 @@ body {
   align-items: flex-start;
   gap: 30px;
 
-  padding-top: 80px; /* h1 공간 확보 */
+  padding-top: 80px;
 }
 
 /* ===================== */
@@ -29,41 +29,34 @@ h1 {
 }
 
 /* ===================== */
-/* GitHub 버튼 */
+/* GitHub 버튼 + 툴팁 */
 /* ===================== */
 .github-btn {
   position: fixed;
   top: 15px;
   right: 15px;
+
   width: 40px;
   height: 40px;
-  z-index: 999;
-}
 
-.github-btn img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
-}
-
-.github-btn img:hover {
-  transform: scale(1.1);
-}
-.github-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
   z-index: 999;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-decoration: none;
 }
 
-/* hover 효과 */
+/* 아이콘 */
+.github-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  transition: transform 0.2s ease;
+}
+
 .github-btn:hover img {
   transform: scale(1.1);
 }
@@ -71,13 +64,14 @@ h1 {
 /* 툴팁 */
 .tooltip {
   position: absolute;
-  right: 50px; /* 아이콘 왼쪽으로 뜨게 */
+  right: 50px;
   top: 50%;
 
   transform: translateY(-50%);
 
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.75);
   color: white;
+
   padding: 5px 10px;
   border-radius: 8px;
 
@@ -141,7 +135,7 @@ h1 {
   background: rgba(255, 255, 255, 0.6);
 }
 
-/* 로그 텍스트 */
+/* 로그 제목 */
 .log-box h2 {
   margin-top: 0;
   font-size: 20px;
@@ -149,6 +143,7 @@ h1 {
   padding-bottom: 5px;
 }
 
+/* 로그 내용 */
 .log {
   font-size: 14px;
   margin-bottom: 8px;
