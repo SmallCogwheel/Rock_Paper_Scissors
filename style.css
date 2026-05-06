@@ -39,13 +39,15 @@ h1 {
   width: 40px;
   height: 40px;
 
-  z-index: 999;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  text-decoration: none;
+  z-index: 999;
+
+  /* 중요 */
+  position: fixed;
+  position: relative;
 }
 
 /* 아이콘 */
@@ -64,12 +66,13 @@ h1 {
 /* 툴팁 */
 .tooltip {
   position: absolute;
+
   right: 50px;
   top: 50%;
 
   transform: translateY(-50%);
 
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.75);
   color: white;
 
   padding: 5px 10px;
@@ -79,14 +82,14 @@ h1 {
   white-space: nowrap;
 
   opacity: 0;
-  pointer-events: none;
-
+  visibility: hidden;
   transition: 0.2s ease;
 }
 
 /* hover 시 표시 */
 .github-btn:hover .tooltip {
   opacity: 1;
+  visibility: visible;
 }
 
 /* ===================== */
