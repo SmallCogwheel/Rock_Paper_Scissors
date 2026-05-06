@@ -50,6 +50,50 @@ h1 {
 .github-btn img:hover {
   transform: scale(1.1);
 }
+.github-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* hover 효과 */
+.github-btn:hover img {
+  transform: scale(1.1);
+}
+
+/* 툴팁 */
+.tooltip {
+  position: absolute;
+  right: 50px; /* 아이콘 왼쪽으로 뜨게 */
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.2s ease;
+}
+
+/* hover 시 표시 */
+.github-btn:hover .tooltip {
+  opacity: 1;
+}
 
 /* ===================== */
 /* 게임 박스 */
