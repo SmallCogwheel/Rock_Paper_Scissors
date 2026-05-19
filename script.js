@@ -21,6 +21,13 @@ let win = 0, lose = 0, draw = 0;
     document.getElementById("status").innerText = "당신의 차례다";
   }
 
+  function getWinningChoice(userChoice) {
+    // 사용자 선택을 이기는 선택지 반환
+    if (userChoice === 1) return 2; // 가위 → 보
+    if (userChoice === 2) return 3; // 보 → 바위
+    if (userChoice === 3) return 1; // 바위 → 가위
+  }
+
   function play(user) {
     toggleButtons(false);
 
@@ -37,6 +44,11 @@ let win = 0, lose = 0, draw = 0;
           newAi = Math.floor(Math.random() * 3) + 1;
         } while (newAi === ai);
         ai = newAi;
+
+        // 50% 안에서 1% 확률로 상대를 확정적으로 이기기
+        if (Math.random() < 0.01) {
+          ai = getWinningChoice(user);
+        }
       } else if (rand < 0.7) {
         // 20% 확률: 무승부 내기 (사용자와 같은 것)
         ai = user;
