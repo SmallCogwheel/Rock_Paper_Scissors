@@ -28,13 +28,20 @@ let win = 0, lose = 0, draw = 0;
       "AI는 다른 행동을 할지 생각하고 있다";
 
     setTimeout(() => {
-      if (Math.random() < 0.7) {
+      const rand = Math.random();
+      
+      if (rand < 0.5) {
+        // 50% 확률: 다른 것으로 바꾸기
         let newAi;
         do {
           newAi = Math.floor(Math.random() * 3) + 1;
         } while (newAi === ai);
         ai = newAi;
+      } else if (rand < 0.7) {
+        // 20% 확률: 무승부 내기 (사용자와 같은 것)
+        ai = user;
       }
+      // 30% 확률: 아무것도 하지 않음 (ai는 그대로)
 
       let resultText = `ai의  ${choices[ai]}! / 당신의 ${choices[user]}! <br>`;
       let resultText1 = `ai의  ${choices[ai]}! / 당신의 ${choices[user]}! <br>`;
